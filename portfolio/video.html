@@ -80,6 +80,12 @@
   </div>
   <p class="vf-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>ວິດີໂອຈະເປີດຢູ່ Google Drive ໃນແທັບໃໝ່</p>
 
+  <div class="pf-filters" id="vfFilters">
+    <button class="pf-filter active" data-cat="all">ທັງໝົດ</button>
+    <button class="pf-filter" data-cat="cat-client">ງານລູກຄ້າ</button>
+    <button class="pf-filter" data-cat="cat-travel">TRAVEL</button>
+  </div>
+
   <div class="vf-grid" id="vfGrid"></div>
 
   <div class="calc">
@@ -136,15 +142,21 @@
 
 <script>
   const VF_ITEMS = [
-    {file:"assets/video/01.jpg", href:"https://drive.google.com/file/d/1Gd2EshYatYFMc-NzdJl48m6ZK-tVkXYY/view?usp=sharing", title:"Social Reel", code:"S2-001"},
-    {file:"assets/video/02.jpg", href:"https://drive.google.com/file/d/1vN5ftclxIdFShx5_f3lLFHx017Qh6fvl/view?usp=sharing", title:"Social Reel", code:"S11-001"},
-    {file:"assets/video/03.jpg", href:"https://drive.google.com/file/d/1-AWrgZRddso150MGPTUA6LqSCh0Uvb5M/view?usp=sharing", title:"PUCKCHUMM", code:"ຜັກສ່ຳຄຳຫອມ — Review"},
-    {file:"assets/video/04.jpg", href:"https://drive.google.com/file/d/1PYeILMVTwbdw2zN_6_6uYr--q5xVeoSd/view?usp=sharing", title:"LACO", code:"Product Video"},
-    {file:"assets/video/05.jpg", href:"https://drive.google.com/file/d/1FNX3BE88M6tvZ5tk4PBMO9cbBpO6KIvt/view?usp=sharing", title:"NEW BALANCE", code:"Campaign Edit"},
-    {file:"assets/video/06.jpg", href:"https://drive.google.com/file/d/1Et9IwBSLcv7BiIP5s6ls7gilwDs_KkYm/view?usp=sharing", title:"HOSPITAL", code:"Campaign 07"},
-    {file:"assets/video/07.jpg", href:"https://drive.google.com/file/d/1RII89x4yLw19hCVp_J3lOpSIQTH34Drx/view?usp=sharing", title:"HOSPITAL", code:"Campaign 08"},
-    {file:"assets/video/08.jpg", href:"https://drive.google.com/file/d/1PV1GgwupnRATJ6h5AZhEV0TPAVg2Ka37/view?usp=sharing", title:"HOSPITAL", code:"Campaign 09"},
-    {file:"assets/video/09.jpg", href:"https://drive.google.com/file/d/1oyEfMU_-YbfK2XQe7ZxRa7INeXgpj4Nt/view?usp=sharing", title:"L6-001", code:"Subtitled Edit"}
+    {file:"assets/video/01.jpg", href:"https://drive.google.com/file/d/1Gd2EshYatYFMc-NzdJl48m6ZK-tVkXYY/view?usp=sharing", title:"Social Reel", code:"S2-001", cat:"cat-client"},
+    {file:"assets/video/02.jpg", href:"https://drive.google.com/file/d/1vN5ftclxIdFShx5_f3lLFHx017Qh6fvl/view?usp=sharing", title:"Social Reel", code:"S11-001", cat:"cat-client"},
+    {file:"assets/video/03.jpg", href:"https://drive.google.com/file/d/1-AWrgZRddso150MGPTUA6LqSCh0Uvb5M/view?usp=sharing", title:"PUCKCHUMM", code:"ຜັກສ່ຳຄຳຫອມ — Review", cat:"cat-client"},
+    {file:"assets/video/04.jpg", href:"https://drive.google.com/file/d/1PYeILMVTwbdw2zN_6_6uYr--q5xVeoSd/view?usp=sharing", title:"LACO", code:"Product Video", cat:"cat-client"},
+    {file:"assets/video/05.jpg", href:"https://drive.google.com/file/d/1FNX3BE88M6tvZ5tk4PBMO9cbBpO6KIvt/view?usp=sharing", title:"NEW BALANCE", code:"Campaign Edit", cat:"cat-client"},
+    {file:"assets/video/06.jpg", href:"https://drive.google.com/file/d/1Et9IwBSLcv7BiIP5s6ls7gilwDs_KkYm/view?usp=sharing", title:"HOSPITAL", code:"Campaign 07", cat:"cat-client"},
+    {file:"assets/video/07.jpg", href:"https://drive.google.com/file/d/1RII89x4yLw19hCVp_J3lOpSIQTH34Drx/view?usp=sharing", title:"HOSPITAL", code:"Campaign 08", cat:"cat-client"},
+    {file:"assets/video/08.jpg", href:"https://drive.google.com/file/d/1PV1GgwupnRATJ6h5AZhEV0TPAVg2Ka37/view?usp=sharing", title:"HOSPITAL", code:"Campaign 09", cat:"cat-client"},
+    {file:"assets/video/09.jpg", href:"https://drive.google.com/file/d/1oyEfMU_-YbfK2XQe7ZxRa7INeXgpj4Nt/view?usp=sharing", title:"L6-001", code:"Subtitled Edit", cat:"cat-client"},
+    {file:"assets/video/10.jpg", href:"https://drive.google.com/drive/folders/1a-PzD2V-qsCtBa6bcVMmZTqqDCbwtc8J?usp=sharing", title:"Phú Quốc", code:"TRAVEL · Day 1", cat:"cat-travel"},
+    {file:"assets/video/11.jpg", href:"https://drive.google.com/drive/folders/1a-PzD2V-qsCtBa6bcVMmZTqqDCbwtc8J?usp=sharing", title:"Phú Quốc", code:"TRAVEL · Day 2", cat:"cat-travel"},
+    {file:"assets/video/12.jpg", href:"https://drive.google.com/drive/folders/1a-PzD2V-qsCtBa6bcVMmZTqqDCbwtc8J?usp=sharing", title:"Phú Quốc", code:"TRAVEL · Day 3", cat:"cat-travel"},
+    {file:"assets/video/13.jpg", href:"https://drive.google.com/drive/folders/1a-PzD2V-qsCtBa6bcVMmZTqqDCbwtc8J?usp=sharing", title:"Hội An", code:"TRAVEL · Day 4", cat:"cat-travel"},
+    {file:"assets/video/14.jpg", href:"https://drive.google.com/drive/folders/1a-PzD2V-qsCtBa6bcVMmZTqqDCbwtc8J?usp=sharing", title:"Banahill", code:"TRAVEL · Day 5", cat:"cat-travel"},
+    {file:"assets/video/15.jpg", href:"https://drive.google.com/drive/folders/1a-PzD2V-qsCtBa6bcVMmZTqqDCbwtc8J?usp=sharing", title:"Nanning", code:"TRAVEL · Food & Shopping", cat:"cat-travel"}
   ];
 
   const grid = document.getElementById('vfGrid');
@@ -154,12 +166,29 @@
     a.href = item.href;
     a.target = '_blank';
     a.rel = 'noopener noreferrer';
+    a.setAttribute('data-cat', item.cat);
     a.innerHTML =
       '<img src="' + item.file + '" alt="' + item.title + ' - ' + item.code + '" loading="lazy" />' +
       '<span class="vf-play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>' +
       '<span class="vf-card-info"><strong>' + item.title + '</strong><span>' + item.code + '</span></span>';
     grid.appendChild(a);
   });
+
+  (function(){
+    var filters = document.querySelectorAll('#vfFilters .pf-filter');
+    var cards = Array.prototype.slice.call(document.querySelectorAll('.vf-card'));
+    filters.forEach(function(btn){
+      btn.addEventListener('click', function(){
+        filters.forEach(function(b){ b.classList.remove('active'); });
+        btn.classList.add('active');
+        var cat = btn.getAttribute('data-cat');
+        cards.forEach(function(card){
+          var show = (cat === 'all') || (card.getAttribute('data-cat') === cat);
+          card.classList.toggle('pf-hide', !show);
+        });
+      });
+    });
+  })();
 
   const PER_CLIP = 500000;
   const PACKAGE_PRICE = 5000000;
