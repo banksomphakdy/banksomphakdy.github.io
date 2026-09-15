@@ -1,0 +1,68 @@
+[
+  {
+    "file": "assets/graphic/01.jpg",
+    "cat": "cat-skincare",
+    "brand": "LACO",
+    "desc": "Skin Firming Serum – Product Shot"
+  },
+  {
+    "file": "assets/graphic/02.jpg",
+    "cat": "cat-skincare",
+    "brand": "LACO",
+    "desc": "Coconut Skincare Campaign"
+  },
+  {
+    "file": "assets/graphic/03.jpg",
+    "cat": "cat-fmcg",
+    "brand": "BETAGRO",
+    "desc": "Facebook Content – Product Comparison"
+  },
+  {
+    "file": "assets/graphic/04.jpg",
+    "cat": "cat-fmcg",
+    "brand": "BETAGRO",
+    "desc": "Facebook Content – Seasonal Greeting"
+  },
+  {
+    "file": "assets/graphic/05.jpg",
+    "cat": "cat-fmcg",
+    "brand": "BETAGRO",
+    "desc": "Facebook Content – Menu Promotion"
+  },
+  {
+    "file": "assets/graphic/06.jpg",
+    "cat": "cat-auto",
+    "brand": "VK CAR PLAZA / HONGQI",
+    "desc": "Facebook Content Grid"
+  },
+  {
+    "file": "assets/graphic/07.jpg",
+    "cat": "cat-auto",
+    "brand": "AUTOMOTIVE",
+    "desc": "Brand Portrait Campaign"
+  },
+  {
+    "file": "assets/graphic/08.jpg",
+    "cat": "cat-auto",
+    "brand": "AUTOMOTIVE",
+    "desc": "Print & Signage Mockup"
+  },
+  {
+    "file": "assets/graphic/09.jpg",
+    "cat": "cat-auto",
+    "brand": "AUTOMOTIVE",
+    "desc": "Vehicle Spec Brochure"
+  },
+  {
+    "file": "assets/graphic/10.jpg",
+    "cat": "cat-auto",
+    "brand": "AUTOMOTIVE",
+    "desc": "Apparel & Merchandise Mockup"
+  },
+  {
+    "file": "assets/graphic/11.jpg",
+    "cat": "cat-auto",
+    "brand": "AUTOMOTIVE",
+    "desc": "Large-Format Signboard (11 x 5.5m)"
+  }
+]
