@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="lo">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ອອກແບບກຣາຟິກ · Portfolio</title>
+<meta name="description" content="ຕົວຢ່າງຜົນງານອອກແບບກຣາຟິກ">
+<link rel="stylesheet" href="../portfolio/style.css">
+</head>
+<body>
+
+<nav class="site-nav">
+  <a class="brand" href="index.html">Portfolio</a>
+  <div class="links">
+    <a href="index.html">ໜ້າຫຼັກ</a>
+    <a href="video.html">ຕັດຕໍ່ວິດີໂອ</a>
+    <a href="graphic.html" class="active">ອອກແບບກຣາຟິກ</a>
+    <a href="cv.html">CV</a>
+  </div>
+</nav>
+
+<div class="wrap">
+
+  <div class="hero">
+    <span class="eyebrow"><span class="dot"></span>PORTFOLIO · GRAPHIC DESIGN</span>
+    <h1>ຕົວຢ່າງຜົນງານອອກແບບກຣາຟິກ</h1>
+    <p>ບໍລິການອອກແບບອາດເວີກສຳລັບໂພສ, ໂຄສະນາ ແລະ ສື່ອອນລາຍ</p>
+    <div class="hero-contact">
+      <a class="hero-contact-link" href="mailto:bankspd2001@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16v12H4z"/><path d="M4 7l8 6 8-6"/></svg>bankspd2001@gmail.com</a>
+      <a class="hero-contact-link" href="tel:+8562096686992"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6.6 10.8a15.9 15.9 0 006.6 6.6l2.2-2.2a1 1 0 011-.25 11.4 11.4 0 003.6.6 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.4 11.4 0 00.6 3.6 1 1 0 01-.25 1z"/></svg>020 9668 6992</a>
+    </div>
+  </div>
+
+  <div class="section-head">
+    <h2>ຕົວຢ່າງຜົນງານ</h2>
+    <span class="hint">ກົດເພື່ອເບິ່ງພາບໃຫຍ່</span>
+  </div>
+
+  <div class="pf-filters" id="pfFilters">
+    <button class="pf-filter active" data-cat="all">ທັງໝົດ</button>
+    <button class="pf-filter" data-cat="cat-skincare">ຜະລິດຕະພັນຄວາມງາມ</button>
+    <button class="pf-filter" data-cat="cat-fmcg">FMCG &amp; ສື່ໂຊເຊຍລ</button>
+    <button class="pf-filter" data-cat="cat-auto">ລົດຍົນ &amp; ສິ່ງພິມ</button>
+  </div>
+
+  <div class="pf-grid" id="pfGrid"></div>
+
+</div>
+
+<div class="pf-lb-backdrop" id="pfBackdrop"></div>
+<div class="pf-lightbox" id="pfLightbox" role="dialog" aria-modal="true">
+  <button class="pf-lb-close" id="pfClose" aria-label="ປິດ"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  <button class="pf-lb-nav pf-lb-prev" id="pfPrev" aria-label="ກ່ອນໜ້າ"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 6l-6 6 6 6"/></svg></button>
+  <img class="pf-lb-img" id="pfLbImg" src="" alt="" />
+  <div class="pf-lb-caption" id="pfLbCaption"></div>
+  <button class="pf-lb-nav pf-lb-next" id="pfNext" aria-label="ຖັດໄປ"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></button>
+</div>
+
+<footer class="site-footer">© <span id="y"></span> · bankspd2001@gmail.com · 020 9668 6992</footer>
+
+<script>
+  const PF_ITEMS = [
+    {file:"../portfolio/assets/graphic/01.jpg", cat:"cat-skincare", brand:"LACO", desc:"Skin Firming Serum – Product Shot"},
+    {file:"../portfolio/assets/graphic/02.jpg", cat:"cat-skincare", brand:"LACO", desc:"Coconut Skincare Campaign"},
+    {file:"../portfolio/assets/graphic/03.jpg", cat:"cat-fmcg", brand:"BETAGRO", desc:"Facebook Content – Product Comparison"},
+    {file:"../portfolio/assets/graphic/04.jpg", cat:"cat-fmcg", brand:"BETAGRO", desc:"Facebook Content – Seasonal Greeting"},
+    {file:"../portfolio/assets/graphic/05.jpg", cat:"cat-fmcg", brand:"BETAGRO", desc:"Facebook Content – Menu Promotion"},
+    {file:"../portfolio/assets/graphic/06.jpg", cat:"cat-auto", brand:"VK CAR PLAZA / HONGQI", desc:"Facebook Content Grid"},
+    {file:"../portfolio/assets/graphic/07.jpg", cat:"cat-auto", brand:"AUTOMOTIVE", desc:"Brand Portrait Campaign"},
+    {file:"../portfolio/assets/graphic/08.jpg", cat:"cat-auto", brand:"AUTOMOTIVE", desc:"Print & Signage Mockup"},
+    {file:"../portfolio/assets/graphic/09.jpg", cat:"cat-auto", brand:"AUTOMOTIVE", desc:"Vehicle Spec Brochure"},
+    {file:"../portfolio/assets/graphic/10.jpg", cat:"cat-auto", brand:"AUTOMOTIVE", desc:"Apparel & Merchandise Mockup"},
+    {file:"../portfolio/assets/graphic/11.jpg", cat:"cat-auto", brand:"AUTOMOTIVE", desc:"Large-Format Signboard (11 x 5.5m)"}
+  ];
+
+  const grid = document.getElementById('pfGrid');
+  PF_ITEMS.forEach(item => {
+    const btn = document.createElement('button');
+    btn.className = 'pf-card';
+    btn.setAttribute('data-cat', item.cat);
+    btn.setAttribute('data-full', item.file);
+    btn.setAttribute('data-brand', item.brand);
+    btn.setAttribute('data-desc', item.desc);
+    btn.innerHTML =
+      '<img src="' + item.file + '" alt="' + item.brand + ' - ' + item.desc + '" loading="lazy" />' +
+      '<span class="pf-card-info"><strong>' + item.brand + '</strong><span>' + item.desc + '</span></span>';
+    grid.appendChild(btn);
+  });
+
+  (function(){
+    var filters = document.querySelectorAll('.pf-filter');
+    var cards = Array.prototype.slice.call(document.querySelectorAll('.pf-card'));
+    var lightbox = document.getElementById('pfLightbox');
+    var backdrop = document.getElementById('pfBackdrop');
+    var lbImg = document.getElementById('pfLbImg');
+    var lbCaption = document.getElementById('pfLbCaption');
+    var btnClose = document.getElementById('pfClose');
+    var btnPrev = document.getElementById('pfPrev');
+    var btnNext = document.getElementById('pfNext');
+    var currentList = cards;
+    var currentIndex = 0;
+
+    filters.forEach(function(btn){
+      btn.addEventListener('click', function(){
+        filters.forEach(function(b){ b.classList.remove('active'); });
+        btn.classList.add('active');
+        var cat = btn.getAttribute('data-cat');
+        cards.forEach(function(card){
+          var show = (cat === 'all') || (card.getAttribute('data-cat') === cat);
+          card.classList.toggle('pf-hide', !show);
+        });
+      });
+    });
+
+    function visibleCards(){
+      return cards.filter(function(c){ return !c.classList.contains('pf-hide'); });
+    }
+
+    function openLightbox(card){
+      currentList = visibleCards();
+      currentIndex = currentList.indexOf(card);
+      renderLb();
+      backdrop.classList.add('open');
+      lightbox.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function renderLb(){
+      var card = currentList[currentIndex];
+      if (!card) return;
+      lbImg.src = card.getAttribute('data-full');
+      var brand = card.getAttribute('data-brand');
+      var desc = card.getAttribute('data-desc');
+      lbCaption.innerHTML = '<strong>' + brand + '</strong>' + desc;
+    }
+
+    function closeLightbox(){
+      backdrop.classList.remove('open');
+      lightbox.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    function step(dir){
+      if (!currentList.length) return;
+      currentIndex = (currentIndex + dir + currentList.length) % currentList.length;
+      renderLb();
+    }
+
+    cards.forEach(function(card){
+      card.addEventListener('click', function(){ openLightbox(card); });
+    });
+
+    btnClose.addEventListener('click', closeLightbox);
+    backdrop.addEventListener('click', closeLightbox);
+    btnPrev.addEventListener('click', function(){ step(-1); });
+    btnNext.addEventListener('click', function(){ step(1); });
+
+    document.addEventListener('keydown', function(e){
+      if (!lightbox.classList.contains('open')) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft') step(-1);
+      if (e.key === 'ArrowRight') step(1);
+    });
+  })();
+
+  document.getElementById('y').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>

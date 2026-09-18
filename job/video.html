@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="lo">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ຕັດຕໍ່ວິດີໂອ · Portfolio</title>
+<meta name="description" content="ຕົວຢ່າງຜົນງານຕັດຕໍ່ວິດີໂອ">
+<link rel="stylesheet" href="../portfolio/style.css">
+</head>
+<body>
+
+<nav class="site-nav">
+  <a class="brand" href="index.html">Portfolio</a>
+  <div class="links">
+    <a href="index.html">ໜ້າຫຼັກ</a>
+    <a href="video.html" class="active">ຕັດຕໍ່ວິດີໂອ</a>
+    <a href="graphic.html">ອອກແບບກຣາຟິກ</a>
+    <a href="cv.html">CV</a>
+  </div>
+</nav>
+
+<div class="wrap">
+
+  <div class="hero">
+    <span class="eyebrow"><span class="dot"></span>PORTFOLIO · VIDEO EDIT</span>
+    <h1>ຕົວຢ່າງຜົນງານຕັດຕໍ່ວິດີໂອ</h1>
+    <div class="hero-contact">
+      <a class="hero-contact-link" href="mailto:bankspd2001@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16v12H4z"/><path d="M4 7l8 6 8-6"/></svg>bankspd2001@gmail.com</a>
+      <a class="hero-contact-link" href="tel:+8562096686992"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6.6 10.8a15.9 15.9 0 006.6 6.6l2.2-2.2a1 1 0 011-.25 11.4 11.4 0 003.6.6 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.4 11.4 0 00.6 3.6 1 1 0 01-.25 1z"/></svg>020 9668 6992</a>
+    </div>
+    <svg class="timeline-ruler" viewBox="0 0 800 34" preserveAspectRatio="none" aria-hidden="true">
+      <line x1="0" y1="17" x2="800" y2="17" stroke-width="1"></line>
+      <line x1="0" y1="6" x2="0" y2="28" stroke-width="1"></line>
+      <line x1="100" y1="10" x2="100" y2="24" stroke-width="1"></line>
+      <line x1="200" y1="6" x2="200" y2="28" stroke-width="1"></line>
+      <line x1="300" y1="10" x2="300" y2="24" stroke-width="1"></line>
+      <line x1="400" y1="6" x2="400" y2="28" stroke-width="1"></line>
+      <line x1="500" y1="10" x2="500" y2="24" stroke-width="1"></line>
+      <line x1="600" y1="6" x2="600" y2="28" stroke-width="1"></line>
+      <line x1="700" y1="10" x2="700" y2="24" stroke-width="1"></line>
+      <line x1="800" y1="6" x2="800" y2="28" stroke-width="1"></line>
+      <line class="playhead" x1="420" y1="2" x2="420" y2="32"></line>
+    </svg>
+  </div>
+
+  <div class="section-head">
+    <h2>ຕົວຢ່າງຜົນງານ</h2>
+    <span class="hint">ກົດເພື່ອເປີດເບິ່ງວິດີໂອ</span>
+  </div>
+  <p class="vf-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>ວິດີໂອຈະເປີດຢູ່ Google Drive ໃນແທັບໃໝ່</p>
+
+  <div class="pf-filters" id="vfFilters">
+    <button class="pf-filter active" data-cat="all">ທັງໝົດ</button>
+    <button class="pf-filter" data-cat="cat-client">ງານລູກຄ້າ</button>
+    <button class="pf-filter" data-cat="cat-travel">TRAVEL</button>
+    <button class="pf-filter" data-cat="cat-realestate">ອະສັງຫາລິມະຊັບ</button>
+  </div>
+
+  <div class="vf-grid" id="vfGrid"></div>
+
+</div>
+
+<footer class="site-footer">© <span id="y"></span> · bankspd2001@gmail.com · 020 9668 6992</footer>
+
+<script>
+  const VF_ITEMS = [
+    {file:"../portfolio/assets/video/01.jpg", href:"https://drive.google.com/file/d/1Gd2EshYatYFMc-NzdJl48m6ZK-tVkXYY/view?usp=sharing", title:"Social Reel", code:"S2-001", cat:"cat-client"},
+    {file:"../portfolio/assets/video/02.jpg", href:"https://drive.google.com/file/d/1vN5ftclxIdFShx5_f3lLFHx017Qh6fvl/view?usp=sharing", title:"Social Reel", code:"S11-001", cat:"cat-client"},
+    {file:"../portfolio/assets/video/03.jpg", href:"https://drive.google.com/file/d/1-AWrgZRddso150MGPTUA6LqSCh0Uvb5M/view?usp=sharing", title:"PUCKCHUMM", code:"ຜັກສ່ຳຄຳຫອມ — Review", cat:"cat-client"},
+    {file:"../portfolio/assets/video/04.jpg", href:"https://drive.google.com/file/d/1PYeILMVTwbdw2zN_6_6uYr--q5xVeoSd/view?usp=sharing", title:"LACO", code:"Product Video", cat:"cat-client"},
+    {file:"../portfolio/assets/video/05.jpg", href:"https://drive.google.com/file/d/1FNX3BE88M6tvZ5tk4PBMO9cbBpO6KIvt/view?usp=sharing", title:"NEW BALANCE", code:"Campaign Edit", cat:"cat-client"},
+    {file:"../portfolio/assets/video/06.jpg", href:"https://drive.google.com/file/d/1Et9IwBSLcv7BiIP5s6ls7gilwDs_KkYm/view?usp=sharing", title:"HOSPITAL", code:"Campaign 07", cat:"cat-client"},
+    {file:"../portfolio/assets/video/07.jpg", href:"https://drive.google.com/file/d/1RII89x4yLw19hCVp_J3lOpSIQTH34Drx/view?usp=sharing", title:"HOSPITAL", code:"Campaign 08", cat:"cat-client"},
+    {file:"../portfolio/assets/video/08.jpg", href:"https://drive.google.com/file/d/1PV1GgwupnRATJ6h5AZhEV0TPAVg2Ka37/view?usp=sharing", title:"HOSPITAL", code:"Campaign 09", cat:"cat-client"},
+    {file:"../portfolio/assets/video/09.jpg", href:"https://drive.google.com/file/d/1oyEfMU_-YbfK2XQe7ZxRa7INeXgpj4Nt/view?usp=sharing", title:"L6-001", code:"Subtitled Edit", cat:"cat-client"},
+    {file:"../portfolio/assets/video/10.jpg", href:"https://drive.google.com/drive/folders/1a-PzD2V-qsCtBa6bcVMmZTqqDCbwtc8J?usp=sharing", title:"Phú Quốc", code:"TRAVEL · Day 1", cat:"cat-travel"},
+    {file:"../portfolio/assets/video/11.jpg", href:"https://drive.google.com/drive/folders/1a-PzD2V-qsCtBa6bcVMmZTqqDCbwtc8J?usp=sharing", title:"Phú Quốc", code:"TRAVEL · Day 2", cat:"cat-travel"},
+    {file:"../portfolio/assets/video/12.jpg", href:"https://drive.google.com/drive/folders/1a-PzD2V-qsCtBa6bcVMmZTqqDCbwtc8J?usp=sharing", title:"Phú Quốc", code:"TRAVEL · Day 3", cat:"cat-travel"},
+    {file:"../portfolio/assets/video/13.jpg", href:"https://drive.google.com/drive/folders/1a-PzD2V-qsCtBa6bcVMmZTqqDCbwtc8J?usp=sharing", title:"Hội An", code:"TRAVEL · Day 4", cat:"cat-travel"},
+    {file:"../portfolio/assets/video/14.jpg", href:"https://drive.google.com/drive/folders/1a-PzD2V-qsCtBa6bcVMmZTqqDCbwtc8J?usp=sharing", title:"Banahill", code:"TRAVEL · Day 5", cat:"cat-travel"},
+    {file:"../portfolio/assets/video/15.jpg", href:"https://drive.google.com/drive/folders/1a-PzD2V-qsCtBa6bcVMmZTqqDCbwtc8J?usp=sharing", title:"Nanning", code:"TRAVEL · Food & Shopping", cat:"cat-travel"},
+    {file:"../portfolio/assets/video/16.svg", href:"https://drive.google.com/drive/folders/12lOS1KfwAZG-8HY3jEanS_TmKrjeRHTl?usp=sharing", title:"ອະສັງຫາລິມະຊັບ", code:"Real Estate Reel", cat:"cat-realestate"}
+  ];
+
+  const grid = document.getElementById('vfGrid');
+  VF_ITEMS.forEach(item => {
+    const a = document.createElement('a');
+    a.className = 'vf-card';
+    a.href = item.href;
+    a.target = '_blank';
+    a.rel = 'noopener noreferrer';
+    a.setAttribute('data-cat', item.cat);
+    a.innerHTML =
+      '<img src="' + item.file + '" alt="' + item.title + ' - ' + item.code + '" loading="lazy" />' +
+      '<span class="vf-play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>' +
+      '<span class="vf-card-info"><strong>' + item.title + '</strong><span>' + item.code + '</span></span>';
+    grid.appendChild(a);
+  });
+
+  (function(){
+    var filters = document.querySelectorAll('#vfFilters .pf-filter');
+    var cards = Array.prototype.slice.call(document.querySelectorAll('.vf-card'));
+    filters.forEach(function(btn){
+      btn.addEventListener('click', function(){
+        filters.forEach(function(b){ b.classList.remove('active'); });
+        btn.classList.add('active');
+        var cat = btn.getAttribute('data-cat');
+        cards.forEach(function(card){
+          var show = (cat === 'all') || (card.getAttribute('data-cat') === cat);
+          card.classList.toggle('pf-hide', !show);
+        });
+      });
+    });
+  })();
+
+  document.getElementById('y').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
