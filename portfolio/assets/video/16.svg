@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 607 1080">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a2230"/>
+      <stop offset="100%" stop-color="#0f1216"/>
+    </linearGradient>
+  </defs>
+  <rect width="607" height="1080" fill="url(#bg)"/>
+  <g transform="translate(303.5,470)" stroke="#e94a3c" stroke-width="10" fill="none" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M-90 10 L0 -80 L90 10" />
+    <path d="M-65 0 L-65 90 L65 90 L65 0" />
+    <rect x="-18" y="30" width="36" height="60" fill="#e94a3c" stroke="none"/>
+  </g>
+  <text x="303.5" y="640" text-anchor="middle" font-family="Noto Sans Lao, sans-serif" font-size="40" font-weight="700" fill="#eef1f0">ອະສັງຫາລິມະຊັບ</text>
+  <text x="303.5" y="690" text-anchor="middle" font-family="ui-monospace, monospace" font-size="22" letter-spacing="2" fill="#aab3ba">REAL ESTATE</text>
+</svg>
