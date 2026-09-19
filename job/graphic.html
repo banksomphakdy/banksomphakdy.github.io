@@ -41,6 +41,8 @@
     <button class="pf-filter" data-cat="cat-skincare">ຜະລິດຕະພັນຄວາມງາມ</button>
     <button class="pf-filter" data-cat="cat-fmcg">FMCG &amp; ສື່ໂຊເຊຍລ</button>
     <button class="pf-filter" data-cat="cat-auto">ລົດຍົນ &amp; ສິ່ງພິມ</button>
+    <button class="pf-filter" data-cat="cat-health">ໂຮງໝໍ &amp; ສຸຂະພາບ</button>
+    <button class="pf-filter" data-cat="cat-vietnam">VIETNAM</button>
   </div>
 
   <div class="pf-grid" id="pfGrid"></div>
@@ -70,7 +72,17 @@
     {file:"../portfolio/assets/graphic/08.jpg", cat:"cat-auto", brand:"AUTOMOTIVE", desc:"Print & Signage Mockup"},
     {file:"../portfolio/assets/graphic/09.jpg", cat:"cat-auto", brand:"AUTOMOTIVE", desc:"Vehicle Spec Brochure"},
     {file:"../portfolio/assets/graphic/10.jpg", cat:"cat-auto", brand:"AUTOMOTIVE", desc:"Apparel & Merchandise Mockup"},
-    {file:"../portfolio/assets/graphic/11.jpg", cat:"cat-auto", brand:"AUTOMOTIVE", desc:"Large-Format Signboard (11 x 5.5m)"}
+    {file:"../portfolio/assets/graphic/11.jpg", cat:"cat-auto", brand:"AUTOMOTIVE", desc:"Large-Format Signboard (11 x 5.5m)"},
+    {file:"../portfolio/assets/graphic/12.jpg", cat:"cat-health", brand:"VIENTIANE CLINIC", desc:"Women Package (LAO)"},
+    {file:"../portfolio/assets/graphic/13.jpg", cat:"cat-health", brand:"VIENTIANE CLINIC", desc:"Men Package (LAO)"},
+    {file:"../portfolio/assets/graphic/14.jpg", cat:"cat-health", brand:"VIENTIANE CLINIC", desc:"Senior Men Package (LAO)"},
+    {file:"../portfolio/assets/graphic/15.jpg", cat:"cat-health", brand:"VIENTIANE CLINIC", desc:"Senior Women Package (LAO)"},
+    {file:"../portfolio/assets/graphic/16.jpg", cat:"cat-health", brand:"VIENTIANE CLINIC", desc:"Children Package (LAO)"},
+    {file:"../portfolio/assets/graphic/17.jpg", cat:"cat-health cat-vietnam", brand:"VIENTIANE CLINIC", desc:"Women Package (VIETNAM)"},
+    {file:"../portfolio/assets/graphic/18.jpg", cat:"cat-health cat-vietnam", brand:"VIENTIANE CLINIC", desc:"Men Package (VIETNAM)"},
+    {file:"../portfolio/assets/graphic/19.jpg", cat:"cat-health cat-vietnam", brand:"VIENTIANE CLINIC", desc:"Senior Men Package (VIETNAM)"},
+    {file:"../portfolio/assets/graphic/20.jpg", cat:"cat-health cat-vietnam", brand:"VIENTIANE CLINIC", desc:"Senior Women Package (VIETNAM)"},
+    {file:"../portfolio/assets/graphic/21.jpg", cat:"cat-health cat-vietnam", brand:"VIENTIANE CLINIC", desc:"Children Package (VIETNAM)"}
   ];
 
   const grid = document.getElementById('pfGrid');
@@ -106,7 +118,8 @@
         btn.classList.add('active');
         var cat = btn.getAttribute('data-cat');
         cards.forEach(function(card){
-          var show = (cat === 'all') || (card.getAttribute('data-cat') === cat);
+          var cardCats = card.getAttribute('data-cat').split(' ');
+          var show = (cat === 'all') || cardCats.indexOf(cat) !== -1;
           card.classList.toggle('pf-hide', !show);
         });
       });
